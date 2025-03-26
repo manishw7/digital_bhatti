@@ -2,23 +2,35 @@
     $server = '127.0.0.1';
     $username = 'root';
     $password = '';
-    $db_name = 'digitalbhatti';
 
-    $conn = mysqli_connect($server,$username,$password,$db_name);
+    // Connect to MySQL
+    $conn = mysqli_connect($server, $username, $password);
 
-    if(!$conn){
+    if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // $sql = "Select * from users where username='manish'";
-    // $bhanai = mysqli_query($conn,$sql);
-    // if(mysqli_num_rows($bhanai) > 0){
-    //     // Fetch and display each row
-    //     while($row = mysqli_fetch_assoc($bhanai)){
-    //         echo "Username: " . $row['username'] . "<br>";
-    //         echo "Password: " . $row['password'] . "<br>"; // Example, change as per your table columns
-    //     }
-    // } else {
-    //     echo 'No result';
-    // }
+    // Create Database
+    $dbname = "digitalbhatti";
+    $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+
+    if (!mysqli_query($conn, $sql)) {
+        echo "Error creating database: " . mysqli_error($conn);
+    }
+
+    // Select the Database
+    mysqli_select_db($conn, $dbname);
+
+    // Create Table
+    $sqltable = "CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) NOT NULL UNIQUE,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        dt DATETIME DEFAULT CURRENT_TIMESTAMP
+    );";
+
+    if (!mysqli_query($conn, $sqltable)) {
+        echo "Error creating table: " . mysqli_error($conn);
+    }
 ?>

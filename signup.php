@@ -1,44 +1,62 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-?>
 
-
-<?php
 $showAlert = false;
 $showError = false;
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    include 'partials/dbconnect.php';
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $cpassword = $_POST["cpassword"];
-    // $exists=false;
 
-    // Check whether this username exists
-    $existSql = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $existSql);
-    $numExistRows = mysqli_num_rows($result);
-    if($numExistRows > 0){
-        // $exists = true;
-        $showError = "Username Already Exists";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include 'partials/dbconnect.php';
+
+    // Trim input to remove spaces and prevent empty input
+    $username = trim($_POST["username"]);
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["password"]);
+    $cpassword = trim($_POST["cpassword"]);
+
+    // Check if any field is empty
+    if (empty($username) || empty($email) || empty($password) || empty($cpassword)) {
+        $showError = "All fields are required!";
+    } 
+    // Check if email is valid
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $showError = "Invalid email format!";
     }
-    else{
-        // $exists = false; 
-        if(($password == $cpassword)){
+    // Check if passwords match
+    elseif ($password !== $cpassword) {
+        $showError = "Passwords do not match!";
+    }
+    else {
+        // Check if the username already exists
+        $existSql = "SELECT * FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($conn, $existSql);
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $numExistRows = mysqli_num_rows($result);
+        
+        if ($numExistRows > 0) {
+            $showError = "Username already exists!";
+        } else {
+            // Hash the password
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users (username, password,dt) VALUES ('$username', '$hash',CURRENT_TIMESTAMP())";
-            $result = mysqli_query($conn, $sql);
-            if ($result){
+
+            // Use prepared statement to prevent SQL injection
+            $sql = "INSERT INTO users (username, email, password, dt) VALUES (?, ?, ?, CURRENT_TIMESTAMP())";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hash);
+            $result = mysqli_stmt_execute($stmt);
+
+            if ($result) {
                 $showAlert = true;
+            } else {
+                $showError = "Error in signup!";
             }
-        }
-        else{
-            $showError = "Passwords do not match";
         }
     }
 }
-    
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -74,12 +92,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     ?>
 
     <div class="container my-4">
-     <h1 class="text-center">Signup to our website</h1>
+     <h1 class="text-center">Signup to Digital Bhatti</h1>
      <form action="/digital_bhatti/signup.php" method="POST">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" maxlength="11" class="form-control" id="username" name="username" aria-describedby="emailHelp">
-            
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" maxlength="20" class="form-control" id="email" name="email" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
             <label for="password">Password</label>

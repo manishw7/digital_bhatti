@@ -6,8 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = $_POST["username"];
     $password = $_POST["password"]; 
     
-     
-    // $sql = "Select * from users where username='$username' AND password='$password'";
+
     $sql = "Select * from users where username='$username'";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
@@ -67,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     ?>
 
     <div class="container my-4">
-     <h1 class="text-center">Login to our website</h1>
+     <h1 class="text-center">Login to Digital Bhatti</h1>
      <form action="/digital_bhatti/login.php" method="POST">
         <div class="form-group">
             <label for="username">Username</label>
@@ -79,7 +78,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="password" class="form-control" id="password" name="password">
         </div>
        
-         
         <button type="submit" class="btn btn-primary">Login</button>
      </form>
     </div>
