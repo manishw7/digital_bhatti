@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "INSERT INTO food_items (name, price, image_path) VALUES ('$name', '$price', '$image_path')";
         mysqli_query($conn, $sql);
     }
+
 }
 ?>
 <!DOCTYPE html>
@@ -54,13 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="file" name="image" accept="image/*" required>
         <button type="submit">Add Food Item</button>
     </form>
+    <form method="post" action="admin_orders.php">
+        <button type="submit">Check order status</button>
+    </form>
     <!-- Logout Button -->
     <form method="post" action="admin_logout.php">
         <button type="submit">Logout</button>
     </form>
 </body>
 </html>
-
-
-
-

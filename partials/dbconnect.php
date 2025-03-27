@@ -48,9 +48,10 @@ $sqlOrders = "CREATE TABLE IF NOT EXISTS orders (
     food_id INT NOT NULL,
     quantity INT NOT NULL,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('Pending', 'Cooking', 'Delivered', 'Canceled') DEFAULT 'Pending',
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (food_id) REFERENCES food_items(id)
-);";
+    );";
 
 mysqli_query($conn, $sqlOrders);
 
