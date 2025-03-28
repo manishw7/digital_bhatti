@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["order_id"])) {
 $sql = "SELECT orders.order_id, food_items.name, orders.quantity, orders.status 
         FROM orders 
         JOIN food_items ON orders.food_id = food_items.id
-        WHERE orders.user_id = ?";
+        WHERE orders.user_id = ?
+        ORDER BY orders.order_id ASC";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "i", $user_id);
 mysqli_stmt_execute($stmt);
@@ -41,9 +42,11 @@ mysqli_stmt_close($stmt);
 <html lang="en">
 <head>
     <title>Order History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Your Order History</h2>
+<?php require '../partials/nav.php'; ?>
+    <h2>Your Order Status</h2>
     <table border="1">
         <tr>
             <th>Order ID</th>
@@ -71,8 +74,5 @@ mysqli_stmt_close($stmt);
             </tr>
         <?php } ?>
     </table>
-
-    <br>
-    <a href="../home.php">Back to Home</a>
 </body>
 </html>

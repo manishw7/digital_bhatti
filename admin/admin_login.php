@@ -24,8 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <title>Admin Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
+<?php require '../admin/admin_nav.php'; ?>
     <h2>Admin Login</h2>
     
     <?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>

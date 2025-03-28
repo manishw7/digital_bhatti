@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 
 // Restrict access to only logged-in admins
@@ -43,8 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
+<?php require '../admin/admin_nav.php'; ?>
     <h2>Welcome, Admin!</h2>
     <p>You have successfully logged in.</p>
 
@@ -54,13 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="number" name="price" placeholder="Price" required>
         <input type="file" name="image" accept="image/*" required>
         <button type="submit">Add Food Item</button>
-    </form>
-    <form method="post" action="admin_orders.php">
-        <button type="submit">Check order status</button>
-    </form>
-    <!-- Logout Button -->
-    <form method="post" action="admin_logout.php">
-        <button type="submit">Logout</button>
     </form>
 </body>
 </html>

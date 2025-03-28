@@ -31,8 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'])) {
 <html lang="en">
 <head>
     <title>Manage Orders</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
+<?php require '../admin/admin_nav.php'; ?>
     <h2>Order Management</h2>
     <table border="1">
         <tr>

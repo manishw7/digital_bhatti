@@ -50,8 +50,6 @@ if (!empty($_SESSION['cart'])) {
 
 <?php require '../partials/nav.php'; ?>
     <h2>Your Cart</h2>
-    <a href="../menu/menu.php"><button> Go back</button></a>
-    
 
     <?php if (empty($_SESSION['cart'])) { ?>
         <p>Your cart is empty.</p>
@@ -70,5 +68,8 @@ if (!empty($_SESSION['cart'])) {
             <button type="submit" name="checkout" value="1">Proceed to Checkout</button>
         </form>
     <?php } ?>
+    <?php if (empty($_SESSION['cart'])) { ?>
+        <a href="../menu/menu.php"><button> Order from here</button></a>
+        <?php } ?>
 </body>
 </html>
