@@ -80,9 +80,9 @@ $staffs = [
                 </div>
                 <ul class="navbar-links">
                     <li><a href="/digital_bhatti/home.php">Home</a></li>
-                    <li><a href="menu/menu.php">Menu</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="/digital_bhatti/menu/menu.php">Menu</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="auth/login.php">Login</a></li>
                 </ul>
             </div>
@@ -117,3 +117,4 @@ $staffs = [
     </section>
 </body>
 </html>
+<?php require '../partials/footer.php';?>

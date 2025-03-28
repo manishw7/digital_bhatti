@@ -79,3 +79,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'])) {
     </table>
 </body>
 </html>
+<?php require '../partials/footer.php';?>

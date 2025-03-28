@@ -61,9 +61,10 @@ function getStatusClass($status) {
             return 'badge-warning';
         case 'Delivered':
             return 'badge-success';
-        case 'Canceled':
+        case 'Cancelled':
             return 'badge-danger';
         default:
             return 'badge-secondary';
     }
-}
+}?>
+<?php require '../partials/footer.php';?>

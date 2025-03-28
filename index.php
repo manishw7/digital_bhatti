@@ -22,8 +22,8 @@
                 <ul class="navbar-links">
                     <li><a href="/digital_bhatti/home.php">Home</a></li>
                     <li><a href="menu/menu.php">Menu</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="about/about.php">About</a></li>
+                    <li><a href="about/contact.php">Contact</a></li>
                     <li><a href="auth/login.php">Login</a></li>
                 </ul>
             </div>
@@ -35,7 +35,7 @@
         <div class="hero-content">
             <h2>Delicious Food, Delivered to Your Door</h2>
             <p>Explore a variety of mouth-watering dishes and order your favorite meals online!</p>
-            <a href="menu/menu.php" class="btn">Browse Menu</a>
+            <a href="/digital_bhatti/auth/login.php" class="btn">Order Now</a>
         </div>
     </section>
 

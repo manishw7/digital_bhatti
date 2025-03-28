@@ -91,7 +91,7 @@ footer {
                 <li><a href="menu/menu.php">Our Food</a></li>
                 <li><a href="about/about.php">About Us</a></li>
                 <li><a href="about/faq.php">Faq's</a></li>
-                <li><a href="auth/login.php">Order Now</a></li>
+                <li><a href="menu/menu.php">Order Now</a></li>
             </ul>
         </div>
         

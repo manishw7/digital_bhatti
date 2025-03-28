@@ -86,3 +86,4 @@ while ($row = mysqli_fetch_assoc($result)) {
     </div>
 </body>
 </html>
+<?php require '../partials/footer.php';?>

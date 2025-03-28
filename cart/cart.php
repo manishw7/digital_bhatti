@@ -98,3 +98,4 @@ if (!empty($_SESSION['cart'])) {
 
 </body>
 </html>
+<?php require '../partials/footer.php';?>

@@ -84,3 +84,4 @@ mysqli_stmt_close($stmt);
     </div>
 </body>
 </html>
+<?php require '../partials/footer.php';?>
