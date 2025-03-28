@@ -11,8 +11,8 @@ if (!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true)
 include '../partials/dbconnect.php'; // Connect to database
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $price = $_POST['price'];
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $price = mysqli_real_escape_string($conn, $_POST['price']);
 
     // File upload settings
     $target_dir = __DIR__ . "/../uploads/"; // Absolute path of target folder
@@ -36,15 +36,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Insert into database
         $sql = "INSERT INTO food_items (name, price, image_path) VALUES ('$name', '$price', '$image_path')";
-        mysqli_query($conn, $sql);
+        if (mysqli_query($conn, $sql)) {
+            // Redirect to the same page after successful insertion to prevent form resubmission
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit;
+        } else {
+            die("Error inserting data: " . mysqli_error($conn));
+        }
     }
-
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href='css/admin_dashboard.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>

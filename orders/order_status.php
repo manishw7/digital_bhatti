@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include '../partials/dbconnect.php';
@@ -41,38 +40,47 @@ mysqli_stmt_close($stmt);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order History</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/order_status.css">
 </head>
 <body>
-<?php require '../partials/nav.php'; ?>
-    <h2>Your Order Status</h2>
-    <table border="1">
-        <tr>
-            <th>Order ID</th>
-            <th>Food Item</th>
-            <th>Quantity</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <tr>
-                <td><?php echo htmlspecialchars($row['order_id']); ?></td>
-                <td><?php echo htmlspecialchars($row['name']); ?></td>
-                <td><?php echo htmlspecialchars($row['quantity']); ?></td>
-                <td><?php echo htmlspecialchars($row['status']); ?></td>
-                <td>
-                    <?php if ($row['status'] === 'Pending' || $row['status'] === 'Cooking') { ?>
-                        <form method="post">
-                            <input type="hidden" name="order_id" value="<?php echo htmlspecialchars($row['order_id']); ?>">
-                            <button type="submit">Cancel</button>
-                        </form>
-                    <?php } else { ?>
-                        -
-                    <?php } ?>
-                </td>
-            </tr>
-        <?php } ?>
-    </table>
+    <?php require '../partials/nav.php'; ?>
+    <div class="container">
+        <h2>Your Order Status</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['order_id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['name']); ?></td>
+                        <td><?php echo htmlspecialchars($row['quantity']); ?></td>
+                        <td><?php echo htmlspecialchars($row['status']); ?></td>
+                        <td>
+                            <?php if ($row['status'] === 'Pending' || $row['status'] === 'Cooking') { ?>
+                                <form method="post">
+                                    <input type="hidden" name="order_id" value="<?php echo htmlspecialchars($row['order_id']); ?>">
+                                    <button type="submit" class="btn cancel-btn">Cancel</button>
+                                </form>
+                            <?php } else { ?>
+                                -
+                            <?php } ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

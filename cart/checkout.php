@@ -49,9 +49,11 @@ $_SESSION['delivery_address'] = '';
 mysqli_stmt_close($stmt);
 
 // Success message
-echo "<h2>Order placed successfully! Thank you for your order.</h2>";
+echo "<div class='container mt-5 text-center'>";
+echo "<h2>Order placed successfully!</h2>";
 echo "<p>Your order is now being processed and will be delivered to your address shortly.</p>";
-echo "<a href='../menu/menu.php'><button>Order more food</button></a>";
+echo "<a href='../menu/menu.php' class='btn btn-primary btn-lg mt-4'>Order more food</a>";
+echo "</div>";
 ?>
 
 <!DOCTYPE html>
@@ -61,5 +63,8 @@ echo "<a href='../menu/menu.php'><button>Order more food</button></a>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Bhatti - Checkout</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
+<body>
+</body>
 </html>

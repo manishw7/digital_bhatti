@@ -1,0 +1,127 @@
+/* Resetting default margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa; /* Light gray background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+/* Container for the page content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+/* Table header styling */
+th {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Table data styling */
+td {
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    font-size: 14px;
+}
+
+/* Hover effect for table rows */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button styling for Update button */
+button.btn-primary {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+button.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Form control select box styling */
+select.form-control {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Title for Order Management */
+h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Admin navigation styling */
+nav {
+    background-color: #343a40;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    td, th {
+        padding: 8px;
+    }
+
+    select.form-control {
+        font-size: 12px;
+    }
+
+    button.btn-primary {
+        font-size: 14px;
+    }
+}

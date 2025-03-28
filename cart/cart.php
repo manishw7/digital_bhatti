@@ -48,49 +48,53 @@ if (!empty($_SESSION['cart'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Bhatti - Cart</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 
 <?php require '../partials/nav.php'; ?>
-<h2>Your Cart</h2>
 
-<?php if (empty($_SESSION['cart'])) { ?>
-    <p>Your cart is empty.</p>
-<?php } else { ?>
-    <form action="cart.php" method="post">
-        <!-- Display cart items -->
-        <?php foreach ($_SESSION['cart'] as $food_id => $quantity) {
-            $food = $food_details[$food_id];
-        ?>
-            <p>
-                <strong><?php echo $food['name']; ?></strong><br>
-                Price: Rs. <?php echo $food['price']; ?><br>
-                Quantity: <input type="number" name="quantity[<?php echo $food_id; ?>]" value="<?php echo $quantity; ?>" min="1"><br>
-                Total: Rs. <?php echo $food['price'] * $quantity; ?>
-            </p>
-        <?php } ?>
-        
-        <button type="submit" name="update_cart" class="btn btn-secondary">Update Cart</button>
-        
-        <!-- Phone number and delivery address -->
-        <h4>Delivery Information</h4>
-        <div class="form-group">
-            <label for="phone_number">Phone Number</label>
-            <input type="text" class="form-control" id="phone_number" name="phone_number" 
-                value="<?php echo isset($_SESSION['phone_number']) ? $_SESSION['phone_number'] : ''; ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="delivery_address">Delivery Address</label>
-            <textarea class="form-control" id="delivery_address" name="delivery_address" rows="3" required><?php echo isset($_SESSION['delivery_address']) ? $_SESSION['delivery_address'] : ''; ?></textarea>
-        </div>
+<div class="container mt-5">
+    <h2>Your Cart</h2>
 
-        <button type="submit" name="checkout" value="1" class="btn btn-primary">Proceed to Checkout</button>
-    </form>
-<?php } ?>
+    <?php if (empty($_SESSION['cart'])) { ?>
+        <p>Your cart is empty. <a href="../menu/menu.php">Order from here</a></p>
+    <?php } else { ?>
+        <form action="cart.php" method="post">
+            <div class="cart-items">
+                <?php foreach ($_SESSION['cart'] as $food_id => $quantity) {
+                    $food = $food_details[$food_id];
+                ?>
+                    <div class="cart-item">
+                        <h4><?php echo htmlspecialchars($food['name']); ?></h4>
+                        <p>Price: Rs. <?php echo number_format($food['price'], 2); ?></p>
+                        <p>Quantity: 
+                            <input type="number" name="quantity[<?php echo $food_id; ?>]" value="<?php echo $quantity; ?>" min="1" class="form-control w-auto">
+                        </p>
+                        <p><strong>Total: Rs. <?php echo number_format($food['price'] * $quantity, 2); ?></strong></p>
+                    </div>
+                <?php } ?>
+            </div>
 
-<?php if (empty($_SESSION['cart'])) { ?>
-    <a href="../menu/menu.php"><button class="btn btn-warning">Order from here</button></a>
-<?php } ?>
+            <button type="submit" name="update_cart" class="btn btn-secondary mt-3">Update Cart</button>
+
+            <hr>
+
+            <h4>Delivery Information</h4>
+            <div class="form-group">
+                <label for="phone_number">Phone Number</label>
+                <input type="text" class="form-control" id="phone_number" name="phone_number" 
+                    value="<?php echo isset($_SESSION['phone_number']) ? $_SESSION['phone_number'] : ''; ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="delivery_address">Delivery Address</label>
+                <textarea class="form-control" id="delivery_address" name="delivery_address" rows="3" required><?php echo isset($_SESSION['delivery_address']) ? $_SESSION['delivery_address'] : ''; ?></textarea>
+            </div>
+
+            <button type="submit" name="checkout" value="1" class="btn btn-primary">Proceed to Checkout</button>
+        </form>
+    <?php } ?>
+</div>
 
 </body>
 </html>
