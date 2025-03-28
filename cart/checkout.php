@@ -5,7 +5,6 @@ require '../partials/nav.php';
 
 // Check if the user is logged in, else redirect
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true || !isset($_SESSION['user_id'])) {
-    echo "Please log in to place an order.";
     header("Location: ../auth/login.php"); // Redirect to the login page
     exit();
 }
@@ -52,4 +51,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Digital Bhatti - Checkout</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
-<a href="../orders/order_status.php"> Check order status</a>

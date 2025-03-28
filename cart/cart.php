@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     header("location: ../auth/login.php");
     exit;
 }
@@ -13,16 +13,12 @@ if (!isset($_SESSION['cart'])) {
 }
 
 // Add item to cart if form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $food_id = $_POST['food_id'];
-    $quantity = $_POST['quantity'];
-
-    // Add or update the item in the cart (update quantity if already exists)
-    if (isset($_SESSION['cart'][$food_id])) {
-        $_SESSION['cart'][$food_id] += $quantity;  // If the item exists, increase the quantity
-    } else {
-        $_SESSION['cart'][$food_id] = $quantity;  // If the item doesn't exist, add it to the cart
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_cart'])) {
+    foreach ($_POST['quantity'] as $food_id => $quantity) {
+        $_SESSION['cart'][$food_id] = $quantity;
     }
+    header("Location: cart.php"); // Refresh the page to reflect changes
+    exit;
 }
 
 // Fetch food details from the database
@@ -50,7 +46,7 @@ if (!empty($_SESSION['cart'])) {
 
 <?php require '../partials/nav.php'; ?>
     <h2>Your Cart</h2>
-
+    
     <?php if (empty($_SESSION['cart'])) { ?>
         <p>Your cart is empty.</p>
     <?php } else { ?>
@@ -68,8 +64,30 @@ if (!empty($_SESSION['cart'])) {
             <button type="submit" name="checkout" value="1">Proceed to Checkout</button>
         </form>
     <?php } ?>
+    
     <?php if (empty($_SESSION['cart'])) { ?>
         <a href="../menu/menu.php"><button> Order from here</button></a>
-        <?php } ?>
+    <?php } ?>
+
+    <!-- Button to show update cart form -->
+    <form action="cart.php" method="POST">
+        <button name="update" value="yes">Want to update cart?</button>
+    </form>
+
+    <!-- Show update cart form when button is clicked -->
+    <?php if (isset($_POST['update'])) { ?>
+        <form method="post" action="cart.php">
+            <?php foreach ($_SESSION['cart'] as $food_id => $quantity) { ?>
+                <p>
+                    <strong><?php echo $food_details[$food_id]['name']; ?></strong><br>
+                    Price: Rs. <?php echo $food_details[$food_id]['price']; ?><br>
+                    Quantity: <input type="number" name="quantity[<?php echo $food_id; ?>]" value="<?php echo $quantity; ?>" min="1"><br>
+                    Total: Rs. <?php echo $food_details[$food_id]['price'] * $quantity; ?>
+                </p>
+            <?php } ?>
+            <button type="submit" name="update_cart">Update Cart</button>
+        </form>
+    <?php } ?>
+
 </body>
 </html>
