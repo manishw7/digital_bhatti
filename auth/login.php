@@ -2,7 +2,7 @@
 $login = false;
 $showError = false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    include 'partials/dbconnect.php';
+    include '../partials/dbconnect.php';
     $username = $_POST["username"];
     $password = $_POST["password"]; 
     
@@ -17,7 +17,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 session_start();
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
-                header("location: home.php");
+                $_SESSION['user_id'] = $row['id'];
+                header("location: ../home.php");
             } 
             else{
                 $showError = "Invalid Credentials";
@@ -45,7 +46,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login</title>
   </head>
   <body>
-    <?php require 'partials/nav.php' ?>
+    <?php require '../partials/nav.php'; ?>
+
     <?php
     if($login){
     echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -67,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <div class="container my-4">
      <h1 class="text-center">Login to Digital Bhatti</h1>
-     <form action="/digital_bhatti/login.php" method="POST">
+     <form action="/digital_bhatti/auth/login.php" method="POST">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
@@ -79,6 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
        
         <button type="submit" class="btn btn-primary">Login</button>
+    
      </form>
     </div>
 

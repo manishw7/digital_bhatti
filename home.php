@@ -2,31 +2,68 @@
 session_start();
 
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-    header("location: login.php");
+    header("location: auth/login.php");
     exit;
 }
-
-
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Bhatti - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <?php require 'partials/nav.php'; ?>
 
-    <title>Welcome - <?php $_SESSION['username']?></title>
-  </head>
-  <body>
-    <?php require 'partials/nav.php' ?>
-    Welcome - <?php echo $_SESSION['username']?>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    <div class="container">
+        <div class="welcome">
+            <h1>Welcome to Digital Bhatti</h1>
+            <p>Your favorite online food ordering system.</p>
+            <a href="menu/menu.php" class="btn btn-primary">Browse Menu</a>
+            <a href="/digital_bhatti/orders/order_history.php" class="btn btn-primary">View Order History</a>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="uploads/download.jpeg" class="card-img-top" alt="Food Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Delicious Meals</h5>
+                        <p class="card-text">Order freshly made meals delivered to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="uploads/delivery.jpg" class="card-img-top" alt="Delivery Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Fast Delivery</h5>
+                        <p class="card-text">Get your food delivered quickly and hot.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="uploads/chef.jpg" class="card-img-top" alt="Chef Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Chefs</h5>
+                        <p class="card-text">Our meals are prepared by professional chefs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <p>© 2025 Digital Bhatti. All Rights Reserved.</p>
+    </footer>
+
+</body>
 </html>

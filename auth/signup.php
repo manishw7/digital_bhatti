@@ -6,7 +6,7 @@ $showAlert = false;
 $showError = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'partials/dbconnect.php';
+    include '../partials/dbconnect.php';
 
     // Trim input to remove spaces and prevent empty input
     $username = trim($_POST["username"]);
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>SignUp</title>
   </head>
   <body>
-    <?php require 'partials/nav.php' ?>
+    <?php require '../partials/nav.php' ?>
     <?php
     if($showAlert){
     echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="container my-4">
      <h1 class="text-center">Signup to Digital Bhatti</h1>
-     <form action="/digital_bhatti/signup.php" method="POST">
+     <form action="/digital_bhatti/auth/signup.php" method="POST">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" maxlength="11" class="form-control" id="username" name="username" aria-describedby="emailHelp">
