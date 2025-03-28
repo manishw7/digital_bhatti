@@ -47,6 +47,8 @@ $sqlOrders = "CREATE TABLE IF NOT EXISTS orders (
     user_id INT NOT NULL,
     food_id INT NOT NULL,
     quantity INT NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
+    delivery_address TEXT NOT NULL,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status ENUM('Pending', 'Cooking', 'Delivered', 'Canceled') DEFAULT 'Pending',
     FOREIGN KEY (user_id) REFERENCES users(id),
