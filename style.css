@@ -50,8 +50,8 @@ body {
 
 /* Hero Section Styling */
 .hero {
-    background: url('hero.jpg') no-repeat center center/cover;
-    height: 500px;
+    background: url('uploads/menu.jpeg') no-repeat center center/cover !important;
+    height: 750px;
     display: flex;
     justify-content: center;
     align-items: center;

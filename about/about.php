@@ -2,28 +2,28 @@
 // Staff Members data
 $staffs = [
     [
-        'name' => 'John Doe',
+        'name' => 'Gordon Ramsay',
         'position' => 'CEO & Founder',
-        'bio' => 'John has over 20 years of experience in the restaurant industry and is passionate about delivering high-quality dishes with exceptional customer service.',
-        'image' => 'uploads/john_doe.jpg'
+        'bio' => 'A Michelin-starred British chef known for his fiery personality and shows like Hell’s Kitchen and MasterChef.',
+        'image' => '../uploads/gordon.jpg'
     ],
     [
-        'name' => 'Jane Smith',
+        'name' => 'Santosh Shah',
         'position' => 'Head Chef',
-        'bio' => 'Jane is an award-winning chef specializing in Italian cuisine. She brings creativity and precision to every dish.',
-        'image' => 'uploads/jane_smith.jpg'
+        'bio' => 'A Nepalese chef who gained fame as a finalist on MasterChef: The Professionals UK, promoting Nepalese cuisine globally.',
+        'image' => '../uploads/santosh.jpg'
     ],
     [
-        'name' => 'Michael Lee',
+        'name' => 'Vikas Khanna',
         'position' => 'Sous Chef',
-        'bio' => 'Michael is an expert in French cuisine and oversees all kitchen operations, ensuring the highest standard of food preparation.',
-        'image' => 'uploads/michael_lee.jpg'
+        'bio' => 'An Indian Michelin-starred chef, author, and humanitarian known for his New York restaurant Junoon and MasterChef India.',
+        'image' => '../uploads/vikas.jpg'
     ],
     [
-        'name' => 'Sarah Williams',
+        'name' => 'Nick DiGiovanni',
         'position' => 'Customer Relations Manager',
-        'bio' => 'Sarah is known for her outstanding customer service skills, making sure each customer feels welcomed and valued.',
-        'image' => 'uploads/sarah_williams.jpg'
+        'bio' => 'An American chef, YouTuber, and MasterChef finalist known for his viral cooking videos and creative recipes.',
+        'image' => '../uploads/nick.jpg'
     ]
 ];
 ?>
@@ -83,7 +83,7 @@ $staffs = [
                     <li><a href="/digital_bhatti/menu/menu.php">Menu</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
-                    <li><a href="auth/login.php">Login</a></li>
+                    <li><a href="/digital_bhatti/auth/login.php">Login</a></li>
                 </ul>
             </div>
         </nav>

@@ -7,7 +7,7 @@ $faqs = [
     ],
     [
         'question' => 'How can I contact customer support?',
-        'answer' => 'You can contact our support team via email at support@example.com or call us at (123) 456-7890.'
+        'answer' => 'You can contact our support team via email at support@db.com or call us at 9823244305.'
     ],
     [
         'question' => 'Do you offer international shipping?',
@@ -15,11 +15,11 @@ $faqs = [
     ],
     [
         'question' => 'What payment methods do you accept?',
-        'answer' => 'We accept credit cards (Visa, MasterCard, and American Express), PayPal, and bank transfers.'
+        'answer' => 'We accept credit cards, Esewa, Khalti and bank transfers.'
     ],
     [
         'question' => 'Can I change or cancel my order?',
-        'answer' => 'You can cancel or change your order within 24 hours of placing it. Please contact support immediately.'
+        'answer' => 'You can cancel or change your order if it is pending or cooking. Please choose the cancel button beside your order.'
     ]
 ];
 ?>

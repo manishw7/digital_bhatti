@@ -49,31 +49,31 @@
                     <img src="uploads/pizza.jpeg" alt="Pizza">
                     <h3>Pizza</h3>
                     <p>Cheese, tomatoes, and a variety of toppings.</p>
-                    <span class="price">$10.99</span>
+                    <span class="price">Rs. 650</span>
                 </div>
                 <div class="menu-item">
                     <img src="uploads/burger.jpeg" alt="Burger">
                     <h3>Burger</h3>
                     <p>Juicy patty with fresh vegetables and sauce.</p>
-                    <span class="price">$5.99</span>
+                    <span class="price">Rs. 700</span>
                 </div>
                 <div class="menu-item">
                     <img src="uploads/corndog.jpeg" alt="Corn Dog">
                     <h3>Corn Dog</h3>
                     <p>Cheesy Corndog with wagyu sausage.</p>
-                    <span class="price">$8.99</span>
+                    <span class="price">Rs. 400</span>
                 </div>
                 <div class="menu-item">
                     <img src="uploads/potato.jpeg" alt="Potato">
                     <h3>Potato</h3>
                     <p>Cheesy Corndog with wagyu sausage.</p>
-                    <span class="price">$8.99</span>
+                    <span class="price">Rs. 300</span>
                 </div>
                 <div class="menu-item">
                     <img src="uploads/sausage.jpeg" alt="Sausage">
                     <h3>Sausage</h3>
                     <p>Cheesy Corndog with wagyu sausage.</p>
-                    <span class="price">$8.99</span>
+                    <span class="price">Rs. 70</span>
                 </div>
             </div>
         </div>
@@ -86,23 +86,23 @@
         <h2>Our Impact in Numbers</h2>
         <div class="fact-items">
             <div class="fact-item">
-                <h3>1000+</h3>
+                <h3>10M+</h3>
                 <p>Happy Customers</p>
             </div>
             <div class="fact-item">
-                <h3>5000+</h3>
+                <h3>5M+</h3>
                 <p>Dishes Served</p>
             </div>
             <div class="fact-item">
-                <h3>50+</h3>
+                <h3>1000+</h3>
                 <p>Chef Specialties</p>
             </div>
             <div class="fact-item">
-                <h3>300+</h3>
+                <h3>1M+</h3>
                 <p>5-Star Reviews</p>
             </div>
             <div class="fact-item">
-                <h3>10+</h3>
+                <h3>50+</h3>
                 <p>Years of Expertise</p>
             </div>
         </div>
@@ -116,29 +116,29 @@
         <div class="chefs-slider">
             <div class="chefs-items">
                 <div class="chef-item">
-                    <img src="uploads/chef1.jpg" alt="Chef 1">
-                    <h3>Chef John Doe</h3>
-                    <p>Expert in Italian cuisine with over 15 years of experience.</p>
+                    <img src="uploads/gordon.jpg" alt="Gordon">
+                    <h3>Gordon Ramsay</h3>
+                    <p>A Michelin-starred British chef known for his fiery personality and shows like Hell’s Kitchen and MasterChef.</p>
                 </div>
                 <div class="chef-item">
-                    <img src="uploads/chef2.jpg" alt="Chef 2">
-                    <h3>Chef Jane Smith</h3>
-                    <p>Specializes in modern Asian fusion and innovative dishes.</p>
+                    <img src="uploads/vikas.jpg" alt="Vikas">
+                    <h3>Vikas Khanna</h3>
+                    <p>An Indian Michelin-starred chef, author, and humanitarian known for his New York restaurant Junoon and MasterChef India.</p>
                 </div>
                 <div class="chef-item">
-                    <img src="uploads/chef3.jpg" alt="Chef 3">
-                    <h3>Chef Michael Lee</h3>
-                    <p>Passionate about French cuisine and classic culinary techniques.</p>
+                    <img src="uploads/santosh.jpg" alt="Santosh">
+                    <h3>Santosh Shah</h3>
+                    <p>A Nepalese chef who gained fame as a finalist on MasterChef: The Professionals UK, promoting Nepalese cuisine globally.</p>
                 </div>
                 <div class="chef-item">
-                    <img src="uploads/chef4.jpg" alt="Chef 4">
-                    <h3>Chef Sarah Williams</h3>
-                    <p>Renowned for her expertise in vegan and plant-based cooking.</p>
+                    <img src="uploads/sanjeev.jpeg" alt="Sanjeev">
+                    <h3>Sanjeev Kapoor</h3>
+                    <p>One of India’s most famous chefs, known for hosting Khana Khazana and revolutionizing home cooking in India.</p>
                 </div>
                 <div class="chef-item">
-                    <img src="uploads/chef5.jpg" alt="Chef 5">
-                    <h3>Chef David Green</h3>
-                    <p>Known for his creativity in crafting unique desserts.</p>
+                    <img src="uploads/nick.jpg" alt="Nick">
+                    <h3>Nick DiGiovanni</h3>
+                    <p>An American chef, YouTuber, and MasterChef finalist known for his viral cooking videos and creative recipes.</p>
                 </div>
             </div>
         </div>
@@ -151,24 +151,24 @@
         <h2>What Our Happy Customers Say</h2>
         <div class="reviews-slider">
             <div class="review-item">
-                <p class="review-text">"The food was absolutely delicious! I’ve never had such amazing pizza before. Will definitely order again!"</p>
-                <h3>- John Doe</h3>
-                <p class="review-location">New York, USA</p>
+                <p class="review-text">"The momos here are so juicy that I thought I reached Nirvana with the first bite. I ordered a plate of chicken momos, and by the time I finished, I was emotionally attached to them. Staff so friendly, I think they might be my long-lost cousins. Highly recommended—will sell my friend’s kidney to eat here again."</p>
+                <h3>- Manish Wagle</h3>
+                <p class="review-location">Syangja,Nepal</p>
             </div>
             <div class="review-item">
-                <p class="review-text">"A great experience! The delivery was fast, and the food was still hot when it arrived. 5 stars!"</p>
-                <h3>- Emily Smith</h3>
-                <p class="review-location">Los Angeles, USA</p>
+                <p class="review-text">"From the moment I entered, I felt like I had walked into my mama ghar. The service? Faster than Nepali aunties spreading news. The food? Better than my own mom’s cooking (but don’t tell her). I ordered one plate of choila, and my soul demanded another. If Digital Bhatti doesn’t win an award soon, I’m calling the police."</p>
+                <h3>- Anusha Sharma</h3>
+                <p class="review-location">Parbat, Nepal</p>
             </div>
             <div class="review-item">
-                <p class="review-text">"Amazing variety and quality. I loved the vegan options, and the chefs are top-notch!"</p>
-                <h3>- Michael Brown</h3>
-                <p class="review-location">London, UK</p>
+                <p class="review-text">"I came here as a simple man, but after tasting the buff sukuti, I feel like I should be writing poetry about it. Spices hit my soul like an earthquake, and the chatni? Spicier than my neighbor’s gossip. If I could legally marry food, Digital Bhatti’s sukuti would be my bride."</p>
+                <h3>- Prazzwol Shrestha</h3>
+                <p class="review-location">Bhaktapur, Nepal</p>
             </div>
             <div class="review-item">
-                <p class="review-text">"Hands down the best food I’ve had in ages! The corndog was out of this world!"</p>
-                <h3>- Sarah Williams</h3>
-                <p class="review-location">Toronto, Canada</p>
+                <p class="review-text">"Ordered the Thakali set and almost cried. The dal was smoother than my love life, the gundruk made me emotional, and the masu? Cooked so perfectly, even my grandma gave a nod of approval. Felt like I was sitting in a village home but with WiFi. If you haven’t eaten here yet, are you even Nepali?"</p>
+                <h3>- Nineyitika Shrestha</h3>
+                <p class="review-location">Kritipur, Nepal</p>
             </div>
         </div>
         <div class="review-nav">

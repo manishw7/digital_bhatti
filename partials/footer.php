@@ -1,4 +1,4 @@
-<footer>
+<footer class = 'footer'>
     <style>/* Footer Styling */
 footer {
     background-color: #333;
@@ -87,11 +87,11 @@ footer {
         <div class="footer-links">
             <h3>Quick Links</h3>
             <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="menu/menu.php">Our Food</a></li>
-                <li><a href="about/about.php">About Us</a></li>
-                <li><a href="about/faq.php">Faq's</a></li>
-                <li><a href="menu/menu.php">Order Now</a></li>
+                <li><a href="/digital_bhatti/home.php">Home</a></li>
+                <li><a href="/digital_bhatti/menu/menu.php">Our Food</a></li>
+                <li><a href="/digital_bhatti/about/about.php">About Us</a></li>
+                <li><a href="/digital_bhatti/about/faq.php">Faq's</a></li>
+                <li><a href="/digital_bhatti/menu/menu.php">Order Now</a></li>
             </ul>
         </div>
         
