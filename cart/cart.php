@@ -77,9 +77,11 @@ if (!empty($_SESSION['cart'])) {
             </div>
 
             <button type="submit" name="update_cart" class="btn btn-secondary mt-3">Update Cart</button>
-
+                </form>
+</div>  
             <hr>
-
+            <div class="container mt-5">
+            <form action="cart.php" method="post">
             <h4>Delivery Information</h4>
             <div class="form-group">
                 <label for="phone_number">Phone Number</label>

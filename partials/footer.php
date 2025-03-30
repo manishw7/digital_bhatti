@@ -109,7 +109,7 @@ footer {
             <h3>Get in Touch</h3>
             <p>DB, Opposite Amrit Science Campus, Lainchaur, Kathmandu, Nepal 44600.</p>
             <p>Phone: (+977) 9823244305</p>
-            <p>Email: <a href="#">proud@bhatti.com</a></p>
+            <p>Email: <a href="#">support@db.com</a></p>
         </div>
     </div>
     <div class="footer-bottom">

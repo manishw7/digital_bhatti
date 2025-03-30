@@ -13,7 +13,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Food Ordering System</title>
+    <title>Digital Bhatti - Home</title>
     <link rel="stylesheet" href="css/chef.css">
     <link rel="stylesheet" href="css/facts.css">
     <link rel="stylesheet" href="css/reviews.css">
