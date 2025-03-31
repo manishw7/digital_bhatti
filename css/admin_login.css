@@ -1,100 +1,94 @@
-/* Make the page take full height */
-html, body {
-    height: 100%;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ff9966, #ff5e62);
-}
-
-/* Fixed Navbar */
-.navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-/* Main content container */
-.main-container {
-    flex: 1; /* Ensures content takes up remaining space */
+    background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-    padding-top: 80px; /* Prevent navbar overlap */
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Center the form */
+/* Container */
+.main-container {
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    width: 350px;
+}
+
 h2 {
-    text-align: center;
-    color: white;
     margin-bottom: 20px;
+    color: #333;
 }
 
+/* Form Styling */
 form {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    max-width: 350px;
-    text-align: center;
 }
 
-/* Input fields */
-form label {
-    font-weight: bold;
-    display: block;
-    margin: 10px 0 5px;
+label {
+    font-size: 16px;
+    color: #555;
+    text-align: left;
 }
 
-form input {
+input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
-/* Submit button */
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff5e62;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px;
     font-size: 16px;
-    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #e04d50;
+    background-color: #0056b3;
 }
 
-/* Error message */
-p {
-    text-align: center;
-    font-weight: bold;
+/* Error Message */
+.error-message {
     color: red;
+    font-size: 14px;
 }
 
-/* Footer at the bottom */
-.footer {
-    width: 100%;
-    background-color: #343a40;
-    color: white;
+/* Footer */
+.admin-footer {
+    background-color: #222;
+    color: #ccc;
     text-align: center;
-    padding: 10px;
-    position: relative;
+    padding: 15px 0;
+    font-size: 14px;
+    position: absolute;
     bottom: 0;
+    width: 100%;
+}
+
+/* Ensures footer sticks to the bottom */
+html, body {
+    height: 100%;
+}
+
+.main-content {
+    flex: 1;
 }

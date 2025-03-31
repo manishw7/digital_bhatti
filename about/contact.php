@@ -26,47 +26,6 @@ body {
     padding-top: 60px; /* To ensure content does not overlap with the fixed navbar */
 }
 
-/* Navbar Styles */
-.navbar {
-    background-color: #333;
-    padding: 10px 0;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* Make navbar cover full width */
-    z-index: 1000; /* Ensure it stays on top of other content */
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px; /* The width of the content inside the navbar */
-    margin: 0 auto; /* Center the navbar content */
-    padding: 0 20px;
-}
-
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar-links li {
-    display: inline;
-}
-
-.navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.navbar-links a:hover {
-    color: #f39c12;
-}
 
 /* Contact Form Styling */
 .contact-form-container {
@@ -146,28 +105,10 @@ footer {
         padding: 0 10px;
     }
 }
-
-        </style>
+</style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="navbar-container">
-                <div class="logo">
-                    <h1>Digital Bhatti</h1>
-                </div>
-                <ul class="navbar-links">
-                    <li><a href="/digital_bhatti/home.php">Home</a></li>
-                    <li><a href="/digital_bhatti/menu/menu.php">Menu</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="/digital_bhatti/auth/login.php">Login</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<?php require '../partials/nav.php'?>
 
     <!-- Contact Form -->
     <div class="contact-form-container">

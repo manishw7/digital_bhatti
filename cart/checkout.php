@@ -64,27 +64,6 @@ echo "</div>";
     <title>Digital Bhatti - Checkout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJd0QJXhd8LZP3jYtDdaQKzE8lBsHmeTDbsh9H7WhK3Ypg6Zy9aG7M1l3WwN" crossorigin="anonymous">
     <style>
-        /* Navbar Styles */
-        .navbar {
-            background-color: #333;
-            padding: 10px 0;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%; /* Full width navbar */
-            z-index: 1000; /* Keep navbar on top */
-        }
-
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
-        }
 
         .logo {
             display: flex;
@@ -98,28 +77,6 @@ echo "</div>";
             color: white;
         }
 
-        .navbar-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar-links li {
-            display: inline;
-        }
-
-        .navbar-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px; /* Larger font size */
-            font-weight: bold;
-        }
-
-        .navbar-links a:hover {
-            color: #f39c12;
-        }
 
         /* Adjust body content for fixed navbar */
         body {
@@ -198,3 +155,4 @@ echo "</div>";
 
 </body>
 </html>
+<?php require '../partials/footer.php';?>

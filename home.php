@@ -37,35 +37,35 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
         <h2>Our Menu</h2>
         <div class="menu-slider">
             <div class="menu-items">
-                <div class="menu-item">
+            <div class="menu-item">
                     <img src="uploads/pizza.jpeg" alt="Pizza">
                     <h3>Pizza</h3>
                     <p>Cheese, tomatoes, and a variety of toppings.</p>
-                    <span class="price">Rs. 650</span>
+                    <span class="price">Rs. 850</span>
                 </div>
                 <div class="menu-item">
                     <img src="uploads/burger.jpeg" alt="Burger">
                     <h3>Burger</h3>
                     <p>Juicy patty with fresh vegetables and sauce.</p>
-                    <span class="price">Rs. 700</span>
+                    <span class="price">Rs. 500</span>
                 </div>
                 <div class="menu-item">
-                    <img src="uploads/corndog.jpeg" alt="Corn Dog">
-                    <h3>Corn Dog</h3>
-                    <p>Cheesy Corndog with wagyu sausage.</p>
-                    <span class="price">Rs. 400</span>
+                    <img src="uploads/momo.jpg" alt="Momo">
+                    <h3>Momo</h3>
+                    <p>A popular Nepali dumpling filled with meat or vegetables, served with spicy chutney</p>
+                    <span class="price">Rs. 200</span>
                 </div>
                 <div class="menu-item">
-                    <img src="uploads/potato.jpeg" alt="Potato">
-                    <h3>Potato</h3>
-                    <p>Cheesy Corndog with wagyu sausage.</p>
+                    <img src="uploads/fries.webp" alt="Fries">
+                    <h3>Fries</h3>
+                    <p>Crispy, golden potato, perfect as a snack or side dish.</p>
                     <span class="price">Rs. 300</span>
                 </div>
                 <div class="menu-item">
-                    <img src="uploads/sausage.jpeg" alt="Sausage">
-                    <h3>Sausage</h3>
-                    <p>Cheesy Corndog with wagyu sausage.</p>
-                    <span class="price">Rs. 70</span>
+                    <img src="uploads/thakali_set.jpg" alt="Thakali">
+                    <h3>Thakali Khana Set</h3>
+                    <p>A traditional Nepali meal with rice, dal, meat, vegetables, pickles, and ghee for a wholesome experience.</p>
+                    <span class="price">Rs. 700</span>
                 </div>
             </div>
         </div>
@@ -143,22 +143,22 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
         <h2>What Our Happy Customers Say</h2>
         <div class="reviews-slider">
             <div class="review-item">
-                <p class="review-text">"The momos here are so juicy that I thought I reached Nirvana with the first bite. I ordered a plate of chicken momos, and by the time I finished, I was emotionally attached to them. Staff so friendly, I think they might be my long-lost cousins. Highly recommended—will sell my friend’s kidney to eat here again."</p>
+                <p class="review-text">"This app is so efficient that my food arrived before I even got hungry. Either they have time-traveling delivery guys or my neighbor is secretly a Digital Bhatti employee. 10/10 will order again—probably before I even finish this review."</p>
                 <h3>- Manish Wagle</h3>
                 <p class="review-location">Syangja,Nepal</p>
             </div>
             <div class="review-item">
-                <p class="review-text">"From the moment I entered, I felt like I had walked into my mama ghar. The service? Faster than Nepali aunties spreading news. The food? Better than my own mom’s cooking (but don’t tell her). I ordered one plate of choila, and my soul demanded another. If Digital Bhatti doesn’t win an award soon, I’m calling the police."</p>
+                <p class="review-text">"The only thing faster than my online food order is my mom switching TV channels during ad breaks. The Thakali set arrived so fresh that I almost believed it was cooked in my own kitchen. If you haven’t ordered from here yet, are you even living?"</p>
                 <h3>- Anusha Sharma</h3>
                 <p class="review-location">Parbat, Nepal</p>
             </div>
             <div class="review-item">
-                <p class="review-text">"I came here as a simple man, but after tasting the buff sukuti, I feel like I should be writing poetry about it. Spices hit my soul like an earthquake, and the chatni? Spicier than my neighbor’s gossip. If I could legally marry food, Digital Bhatti’s sukuti would be my bride."</p>
+                <p class="review-text">"Ordered fries, expected good food. Got fries so crispy that even my life decisions feel soft in comparison. The delivery guy arrived faster than my relatives when they hear free food. If this app had a 'marry' button, I’d click it instantly."</p>
                 <h3>- Prazzwol Shrestha</h3>
                 <p class="review-location">Bhaktapur, Nepal</p>
             </div>
             <div class="review-item">
-                <p class="review-text">"Ordered the Thakali set and almost cried. The dal was smoother than my love life, the gundruk made me emotional, and the masu? Cooked so perfectly, even my grandma gave a nod of approval. Felt like I was sitting in a village home but with WiFi. If you haven’t eaten here yet, are you even Nepali?"</p>
+                <p class="review-text">"I swear, ordering from this app is smoother than my attempts at flirting. The UI is cleaner than my room, and the food? Let’s just say I may or may not have proposed to the momo delivery guy. If this service doesn’t get a national award, I’m rioting."</p>
                 <h3>- Nineyitika Shrestha</h3>
                 <p class="review-location">Kritipur, Nepal</p>
             </div>

@@ -91,7 +91,6 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
                 <?php
                 if(!$loggedin) {
                     // Show login, signup, and admin login links if not logged in
-                    echo '<li><a href="/digital_bhatti/index.php">Welcome</a></li>';
                     echo '<li><a href="/digital_bhatti/auth/login.php">Login</a></li>';
                     echo '<li><a href="/digital_bhatti/auth/signup.php">Signup</a></li>';
                     echo '<li><a href="/digital_bhatti/admin/admin_login.php">Admin Login</a></li>';
@@ -99,9 +98,8 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
                     // Show logout, cart, and current orders if logged in
                     echo '<li><a href="/digital_bhatti/home.php">Home</a></li>';
                     echo'<li><a href="/digital_bhatti/menu/menu.php">Menu</a></li>';
-                    echo '<li><a href="/digital_bhatti/auth/logout.php">Logout</a></li>';
-                    echo '<li><a href="/digital_bhatti/cart/cart.php">Cart</a></li>';
                     echo '<li><a href="/digital_bhatti/orders/order_status.php">Current Orders</a></li>';
+                    echo '<li><a href="/digital_bhatti/auth/logout.php">Logout</a></li>';
                 }
                 ?>
             </ul>

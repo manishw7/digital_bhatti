@@ -11,43 +11,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Navbar Styling */
-.navbar {
-    background-color: #333;
-    padding: 10px 0;
-    color: white;
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar-links li {
-    display: inline;
-}
-
-.navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.navbar-links a:hover {
-    color: #f39c12;
-}
-
 /* Hero Section Styling */
 .hero {
     background: url('uploads/menu.jpeg') no-repeat center center/cover !important;
