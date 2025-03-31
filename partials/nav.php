@@ -1,52 +1,113 @@
 <?php 
+session_start(); // Ensure session is started
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
-  $loggedin= true;
-}
-else{
+  $loggedin = true;
+} else {
   $loggedin = false;
 }
-echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Digital Bhatti</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/digital_bhatti/home.php">Home <span class="sr-only">(current)</span></a>
-      </li>';
-
-      if(!$loggedin){
-      echo '<li class="nav-item">
-        <a class="nav-link" href="/digital_bhatti/auth/login.php">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/digital_bhatti/auth/signup.php">Signup</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/digital_bhatti/admin/admin_login.php">Admin Login</a>
-      </li>';
-      }
-      if($loggedin){
-      echo '<li class="nav-item">
-        <a class="nav-link" href="/digital_bhatti/auth/logout.php">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/digital_bhatti/cart/cart.php">Cart</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/digital_bhatti/orders/order_status.php">Current Orders</a>
-      </li>';
-      
-    }
-       
-      
-    echo '</ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>';
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Bhatti</title>
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; /* Full width navbar */
+            z-index: 1000; /* Keep navbar on top */
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-grow: 1; /* Ensures logo pushes links to the right */
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: white;
+        }
+
+        .navbar-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-links li {
+            display: inline;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px; /* Larger font size */
+            font-weight: bold;
+        }
+
+        .navbar-links a:hover {
+            color: #f39c12;
+        }
+
+        body {
+            padding-top: 60px; /* Adjust for fixed navbar */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <h1>Digital Bhatti</h1>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="/digital_bhatti/about/about.php">About</a></li>
+                <li><a href="/digital_bhatti/about/contact.php">Contact</a></li>
+
+                <?php
+                if(!$loggedin) {
+                    // Show login, signup, and admin login links if not logged in
+                    echo '<li><a href="/digital_bhatti/index.php">Welcome</a></li>';
+                    echo '<li><a href="/digital_bhatti/auth/login.php">Login</a></li>';
+                    echo '<li><a href="/digital_bhatti/auth/signup.php">Signup</a></li>';
+                    echo '<li><a href="/digital_bhatti/admin/admin_login.php">Admin Login</a></li>';
+                } else {
+                    // Show logout, cart, and current orders if logged in
+                    echo '<li><a href="/digital_bhatti/home.php">Home</a></li>';
+                    echo'<li><a href="/digital_bhatti/menu/menu.php">Menu</a></li>';
+                    echo '<li><a href="/digital_bhatti/auth/logout.php">Logout</a></li>';
+                    echo '<li><a href="/digital_bhatti/cart/cart.php">Cart</a></li>';
+                    echo '<li><a href="/digital_bhatti/orders/order_status.php">Current Orders</a></li>';
+                }
+                ?>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+</body>
+</html>

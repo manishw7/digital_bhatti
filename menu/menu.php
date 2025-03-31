@@ -40,43 +40,50 @@ while ($row = mysqli_fetch_assoc($result)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
     <?php include '../partials/nav.php'; ?>
     
-    <h2>Food Menu</h2>
+    <div class="container">
+        <h2 class="text-center mt-5">Food Menu</h2>
 
-    <!-- Reset Cart Button -->
-    <form method="post" action="menu.php">
-        <button type="submit" name="reset_cart">Reset Cart</button>
-    </form>
-
-    <!-- Add to Cart Form -->
-    <form method="post" action="menu.php">
-        <div class="menu">
-            <?php foreach ($food_details as $food_id => $food) { ?>
-                <div class="food-item">
-                    <h3><?php echo htmlspecialchars($food['name']); ?></h3>
-                    <p>Price: Rs. <?php echo number_format($food['price'], 2); ?></p>
-
-                    <?php if (!empty($food['image_path'])) { ?>
-                        <img src="../<?php echo htmlspecialchars($food['image_path']); ?>" alt="<?php echo htmlspecialchars($food['name']); ?>" style="width: 100px; height: 100px;">
-                    <?php } else { ?>
-                        <p>No image available</p>
-                    <?php } ?>
-
-                    <!-- Quantity Selector -->
-                    <input type="number" name="quantity[<?php echo $food_id; ?>]" min="0" value="0">
-                </div>
-            <?php } ?>
+        <!-- Reset Cart Button -->
+        <div class="text-center mt-4">
+            <form method="post" action="menu.php">
+                <button type="submit" name="reset_cart" class="btn btn-danger btn-sm">Reset Cart</button>
+            </form>
         </div>
 
-        <!-- Add to Cart Button (Redirects to cart.php) -->
-        <button type="submit" name="add_to_cart">Add to Cart</button>
-    </form>
+        <!-- Add to Cart Form -->
+        <form method="post" action="menu.php" class="mt-4">
+            <div class="row menu">
+                <?php foreach ($food_details as $food_id => $food) { ?>
+                    <div class="col-md-4 food-item">
+                        <div class="card shadow-sm">
+                            <img src="../<?php echo htmlspecialchars($food['image_path']); ?>" alt="<?php echo htmlspecialchars($food['name']); ?>" class="card-img-top food-image">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo htmlspecialchars($food['name']); ?></h5>
+                                <p class="card-text">Price: Rs. <?php echo number_format($food['price'], 2); ?></p>
+                                
+                                <!-- Quantity Selector -->
+                                <input type="number" name="quantity[<?php echo $food_id; ?>]" class="form-control" min="0" value="0">
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
 
+            <!-- Add to Cart Button -->
+            <div class="text-center mt-4">
+                <button type="submit" name="add_to_cart" class="btn btn-primary btn-lg">Add to Cart</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
+<?php require '../partials/footer.php';?>
