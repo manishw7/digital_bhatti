@@ -10,6 +10,49 @@
     <link rel="stylesheet" href="css/reviews.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/menu_index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#2E294E',
+                        accent: '#1B998B',
+                        light: '#F7F7F2',
+                        dark: '#252422'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-scroll, .chef-scroll, .review-scroll {
+            scrollbar-width: none;
+        }
+        .menu-scroll::-webkit-scrollbar, 
+        .chef-scroll::-webkit-scrollbar, 
+        .review-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('uploads/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .review-item {
+            transition: all 0.3s ease;
+        }
+        .review-item:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+    
 </head>
 <body>
     <!-- Navbar Section -->
