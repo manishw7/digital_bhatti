@@ -23,12 +23,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <title>Admin Login</title>
-    <link rel="stylesheet" href="css/admin_login.css">
+    <link rel="stylesheet" href="../css/admin_login.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
 
 <?php require '../admin/admin_nav.php'; ?>
+<style>/* Admin Footer Styles */
+.admin-footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ensure the footer sticks to the bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+</style>
 
 <div class="main-container">
     <h2>Admin Login</h2>
@@ -47,3 +71,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 </body>
 </html>
+<?php require 'admin_footer.php';?>
