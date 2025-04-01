@@ -77,7 +77,7 @@ $orderReference = time();
     </script>
 </head>
 
-<body class="bg-gray-100 font-sans min-h-screen">
+<body class="bg-gray-100 font-sans min-h-screen mt-8">
     <?php include "../partials/nav.php"; ?>
     <?php if (isset($orderSuccess) && $orderSuccess): ?>
         <div class="max-w-2xl mx-auto px-4 py-8">
