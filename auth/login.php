@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
                 $_SESSION['user_id'] = $row['id'];
-                header("location: ../index1.php");
+                header("location: ../index.php");
             } else {
                 $showError = "Invalid Credentials";
             }
