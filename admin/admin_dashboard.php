@@ -14,7 +14,7 @@ $error_message = '';
 
 // Handle delete request via AJAX securely
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete_food') {
-    header('Content-Type: application/json'); // ✅ Set JSON header
+    header('Content-Type: application/json'); // Set JSON header
 
     if (!empty($_POST['food_id']) && is_numeric($_POST['food_id'])) {
         $food_id = intval($_POST['food_id']);
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     } else {
         echo json_encode(['success' => false, 'message' => 'Invalid request']);
     }
-    exit; // ✅ Ensure script stops after sending JSON
+    exit; // Ensure script stops after sending JSON
 }
 
 // Handle food item addition securely
@@ -59,7 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
             $stmt->bind_param("sds", $name, $price, $image_path);
 
             if ($stmt->execute()) {
-                $success_message = "Food item added successfully!";
+                // Implement Post/Redirect/Get pattern to prevent form resubmission
+                $_SESSION['success_message'] = "Food item added successfully!";
+                header("Location: " . $_SERVER['PHP_SELF']);
+                exit;
             } else {
                 $error_message = "Database error: " . $stmt->error;
             }
@@ -70,6 +73,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
     } else {
         $error_message = "Please select an image.";
     }
+}
+
+// Check for success message from session (for Post/Redirect/Get pattern)
+if (isset($_SESSION['success_message'])) {
+    $success_message = $_SESSION['success_message'];
+    unset($_SESSION['success_message']); // Clear the message after displaying
 }
 
 // Fetch all food items securely
@@ -180,31 +189,27 @@ if ($result_orders && $row_orders = $result_orders->fetch_assoc()) {
                                 <div class="mb-6">
                                     <label for="image" class="block text-sm font-medium text-gray-700 mb-1">Food
                                         Image</label>
-                                    <label for="image">
-                                        <div
-                                            class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg">
-                                            <div class="space-y-1 text-center">
-                                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
-                                                    fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                                                    <path
-                                                        d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                        stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                <div class="flex items-center  text-sm text-gray-600">
-                                                    <label for="image"
-                                                        class="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-primary/80 focus-within:outline-none">
-                                                        <span>Upload a file</span>
-
-                                                    </label>
-                                                </div>
-                                                <p class="text-xs text-gray-500">PNG, JPG, GIF up to 5MB</p>
+                                    <div
+                                        class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg">
+                                        <div class="space-y-1 text-center">
+                                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
+                                                fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                                <path
+                                                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <div class="flex items-center justify-center text-sm text-gray-600">
+                                                <label for="image"
+                                                    class="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-primary/80 focus-within:outline-none">
+                                                    <span>Upload a file</span>
+                                                    <input id="image" name="image" type="file" accept="image/*"
+                                                        class="sr-only" required>
+                                                </label>
                                             </div>
-                                            <input id="image" name="image" type="file" accept="image/*" class="sr-only"
-                                                required>
+                                            <p class="text-xs text-gray-500">PNG, JPG, GIF up to 5MB</p>
                                         </div>
-
-                                    </label>
+                                    </div>
+                                    <div class="image-preview mt-2"></div>
                                 </div>
 
                                 <button type="submit" name="add_food" value="1"
@@ -310,81 +315,6 @@ if ($result_orders && $row_orders = $result_orders->fetch_assoc()) {
     </div>
 
     <script>
-        // Preview image before upload
-        document.getElementById('image').addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const img = document.createElement('img');
-                    img.src = event.target.result;
-                    img.classList.add('w-full', 'h-32', 'object-cover', 'mt-2', 'rounded-lg');
-
-                    // Remove any existing preview
-                    const existingPreview = document.querySelector('.image-preview');
-                    if (existingPreview) {
-                        existingPreview.remove();
-                    }
-
-                    // Create preview container
-                    const previewContainer = document.createElement('div');
-                    previewContainer.classList.add('image-preview');
-                    previewContainer.appendChild(img);
-
-                    // Add preview after the upload area
-                    const uploadArea = e.target.closest('div.mt-1');
-                    uploadArea.after(previewContainer);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteModal = document.getElementById('delete-modal');
-            const cancelButton = document.getElementById('cancel-delete');
-            const confirmButton = document.getElementById('confirm-delete');
-            let currentFoodId = null;
-
-            document.addEventListener('click', function (e) {
-                if (e.target.closest('.remove-btn')) {
-                    currentFoodId = e.target.closest('.remove-btn').dataset.id;
-                    deleteModal.classList.remove('hidden');
-                }
-            });
-
-            cancelButton.addEventListener('click', function () {
-                deleteModal.classList.add('hidden');
-            });
-
-            confirmButton.addEventListener('click', async function () {
-                if (currentFoodId) {
-                    try {
-                        const response = await fetch(window.location.href, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                            body: new URLSearchParams({ action: 'delete_food', food_id: currentFoodId })
-                        });
-
-                        // ✅ Ensure response is valid JSON
-                        if (!response.ok) throw new Error("Server error: " + response.status);
-
-                        const result = await response.json(); // 🔥 This is where error happens if JSON is invalid
-
-                        if (result.success) {
-                            location.reload();
-                        } else {
-                            alert(result.message || "Error deleting item.");
-                        }
-                    } catch (error) {
-                        console.error("Delete error:", error);
-                        alert("Something went wrong. Check console for details.");
-                    }
-                }
-                deleteModal.classList.add('hidden');
-            });
-
-        });
-
         // Image Preview
         document.getElementById('image').addEventListener('change', function (e) {
             const file = e.target.files[0];
@@ -393,16 +323,62 @@ if ($result_orders && $row_orders = $result_orders->fetch_assoc()) {
             const reader = new FileReader();
             reader.onload = function (event) {
                 const previewContainer = document.querySelector('.image-preview');
-                if (previewContainer) {
-                    previewContainer.innerHTML = `<img src="${event.target.result}" class="w-full h-32 object-cover mt-2 rounded-lg">`;
-                } else {
-                    const imgContainer = document.createElement('div');
-                    imgContainer.classList.add('image-preview');
-                    imgContainer.innerHTML = `<img src="${event.target.result}" class="w-full h-32 object-cover mt-2 rounded-lg">`;
-                    e.target.closest('.mt-1').after(imgContainer);
-                }
+                previewContainer.innerHTML = `<img src="${event.target.result}" class="w-full h-32 object-cover mt-2 rounded-lg">`;
             };
             reader.readAsDataURL(file);
+        });
+
+        // Delete functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const deleteModal = document.getElementById('delete-modal');
+            const cancelButton = document.getElementById('cancel-delete');
+            const confirmButton = document.getElementById('confirm-delete');
+            let currentFoodId = null;
+
+            // Use proper event delegation for delete buttons
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    currentFoodId = this.getAttribute('data-id');
+                    deleteModal.classList.remove('hidden');
+                });
+            });
+
+            cancelButton.addEventListener('click', function () {
+                deleteModal.classList.add('hidden');
+            });
+
+            confirmButton.addEventListener('click', function () {
+                if (currentFoodId) {
+                    const formData = new FormData();
+                    formData.append('action', 'delete_food');
+                    formData.append('food_id', currentFoodId);
+
+                    fetch(window.location.href, {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.success) {
+                                location.reload();
+                            } else {
+                                alert(data.message || "Error deleting item");
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert("Something went wrong. Please try again.");
+                        })
+                        .finally(() => {
+                            deleteModal.classList.add('hidden');
+                        });
+                }
+            });
         });
     </script>
 

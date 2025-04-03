@@ -113,7 +113,7 @@
                             alt="Restaurant History" class="rounded-lg shadow-xl">
                         <div class="absolute -bottom-6 -left-6 bg-primary text-white p-4 rounded-lg shadow-lg">
                             <p class="font-bold">Est. 2010</p>
-                            <p>13+ Years of Excellence</p>
+                            <p>15+ Years of Excellence</p>
                         </div>
                     </div>
                 </div>

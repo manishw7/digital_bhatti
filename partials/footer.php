@@ -64,11 +64,16 @@
                 <div>
                     <h3 class="text-xl font-bold mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="#menu" class="hover:text-primary transition-colors">Menu</a></li>
-                        <li><a href="#facts" class="hover:text-primary transition-colors">About Us</a></li>
-                        <li><a href="#reviews" class="hover:text-primary transition-colors">Reviews</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="/digital_bhatti/index.php" class="hover:text-primary transition-colors">Home</a>
+                        </li>
+                        <li><a href="/digital_bhatti/menu/menu.php"
+                                class="hover:text-primary transition-colors">Menu</a></li>
+                        <li><a href="/digital_bhatti/about/about.php" class="hover:text-primary transition-colors">About
+                                Us</a></li>
+                        <li><a href="/digital_bhatti/about/contact.php"
+                                class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="/digital_bhatti/about/faq.php"
+                                class="hover:text-primary transition-colors">FAQs</a></li>
                     </ul>
                 </div>
 
