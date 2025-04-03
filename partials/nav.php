@@ -68,8 +68,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             echo ' <li><a href="/digital_bhatti/index.php" class="text-dark hover:text-primary transition-colors">Home</a></li>';
                             echo ' <li><a href="/digital_bhatti/menu/menu.php" class="text-dark hover:text-primary transition-colors">Menu</a></li>';
 
-                            echo '<li><a href="/digital_bhatti/cart/cart.php">Cart</a></li>';
+                            // echo '<li><a href="/digital_bhatti/cart/cart.php">Cart</a></li>';
+                        
                             echo ' <li><a href="/digital_bhatti/orders/order_status.php" class="text-dark hover:text-primary transition-colors">Orders</a></li>';
+                            echo ' <li><a href="/digital_bhatti/about/contact.php" class="text-dark hover:text-primary transition-colors">Contact</a></li>';
                             echo ' <li><a href="/digital_bhatti/auth/logout.php" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all">Logout</a></li>';
 
                         }
@@ -109,7 +111,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                         echo '<li><a href="/digital_bhatti/cart/cart.php">Cart</a></li>';
                         echo ' <li><a href="/digital_bhatti/orders/order_status.php" class="text-dark hover:text-primary transition-colors">Orders</a></li>';
-                        echo ' <li><a href="/digital_bhatti/auth/logout.php" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all">Login</a></li>';
+                        echo ' <li><a href="/digital_bhatti/auth/logout.php" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all">Logout</a></li>';
 
                     }
                     ?>

@@ -151,7 +151,7 @@
                     class="text-primary">Delivered</span> to Your Door</h2>
             <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Explore a variety of mouth-watering dishes and order
                 your favorite meals online!</p>
-            <a href="#"
+            <a href="/digital_bhatti/menu/menu.php"
                 class="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all inline-block transform hover:scale-105">Order
                 Now</a>
         </div>
@@ -186,9 +186,9 @@
                                     <span class="text-primary font-bold">Rs. 650</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Cheese, tomatoes, and a variety of toppings.</p>
-                                <button
-                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                    to Cart</button>
+                                <a href="/digital_bhatti/menu/menu.php"><button
+                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                        to Cart</button></a>
                             </div>
                         </div>
 
@@ -201,24 +201,24 @@
                                     <span class="text-primary font-bold">Rs. 700</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Juicy patty with fresh vegetables and sauce.</p>
-                                <button
-                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                    to Cart</button>
+                                <a href="/digital_bhatti/menu/menu.php"><button
+                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                        to Cart</button></a>
                             </div>
                         </div>
 
                         <div
                             class="menu-item bg-white rounded-xl shadow-lg overflow-hidden w-80     transform transition-all hover:scale-105">
-                            <img src="uploads/corndog.jpeg" alt="Corn Dog" class="w-full h-48 object-cover">
+                            <img src="uploads/momo.jpg" alt="Momo" class="w-full h-48 object-cover">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-3">
-                                    <h3 class="text-xl font-bold">Corn Dog</h3>
-                                    <span class="text-primary font-bold">Rs. 400</span>
+                                    <h3 class="text-xl font-bold">Momo</h3>
+                                    <span class="text-primary font-bold">Rs. 200</span>
                                 </div>
-                                <p class="text-gray-600 mb-4">Cheesy Corndog with wagyu sausage.</p>
-                                <button
-                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                    to Cart</button>
+                                <p class="text-gray-600 mb-4">Juicy Momo with mitho jhol and spicy chutney.</p>
+                                <a href="/digital_bhatti/menu/menu.php"><button
+                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                        to Cart</button></a>
                             </div>
                         </div>
 
@@ -231,24 +231,24 @@
                                     <span class="text-primary font-bold">Rs. 300</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Crispy Fries wedges with special seasoning.</p>
-                                <button
-                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                    to Cart</button>
+                                <a href="/digital_bhatti/menu/menu.php"><button
+                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                        to Cart</button></a>
                             </div>
                         </div>
 
                         <div
                             class="menu-item bg-white rounded-xl shadow-lg overflow-hidden w-80     transform transition-all hover:scale-105">
-                            <img src="uploads/sausage.jpeg" alt="Sausage" class="w-full h-48 object-cover">
+                            <img src="uploads/thakali_set.jpg" alt="Sausage" class="w-full h-48 object-cover">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-3">
-                                    <h3 class="text-xl font-bold">Sausage</h3>
-                                    <span class="text-primary font-bold">Rs. 70</span>
+                                    <h3 class="text-xl font-bold">Thakali</h3>
+                                    <span class="text-primary font-bold">Rs. 700</span>
                                 </div>
-                                <p class="text-gray-600 mb-4">Premium quality sausage, perfectly grilled.</p>
-                                <button
-                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                    to Cart</button>
+                                <p class="text-gray-600 mb-4">A traditional Nepali meal with rice, dal, meat,</p>
+                                <a href="/digital_bhatti/menu/menu.php"><button
+                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                        to Cart</button></a>
                             </div>
                         </div>
                     </div>

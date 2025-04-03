@@ -259,8 +259,7 @@ if ($result_orders && $row_orders = $result_orders->fetch_assoc()) {
                                                     <div class="w-12 h-12 rounded-md overflow-hidden">
                                                         <img src="../<?php echo htmlspecialchars($item['image_path']); ?>"
                                                             alt="<?php echo htmlspecialchars($item['name']); ?>"
-                                                            class="w-full h-full object-cover"
-                                                            onerror="this.src='https://via.placeholder.com/150'">
+                                                            class="w-full h-full object-cover">
                                                     </div>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap">
@@ -381,10 +380,7 @@ if ($result_orders && $row_orders = $result_orders->fetch_assoc()) {
             });
         });
     </script>
-
+    <?php require 'admin_footer.php'; ?>
 </body>
 
 </html>
-
-</html>
-<?php require 'admin_footer.php'; ?>

@@ -132,7 +132,7 @@
             </div>
 
             <div class="border-t border-white/20 mt-12 pt-8 text-center">
-                <p>&copy; <?php echo date("Y"); ?> Digital Bhatti Admin Panel. All Rights Reserved.</p>
+                <p>&copy; <?php echo date("Y"); ?> Digital Bhatti All Rights Reserved.</p>
                 <p>Developed & Managed by Digital Bhatti Team</p>
             </div>
         </div>

@@ -166,6 +166,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             hidePasswordIcon.classList.toggle('hidden');
         });
     </script>
+
+    <?php require 'admin_footer.php'; ?>
+
 </body>
 
 </html>
