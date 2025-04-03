@@ -55,6 +55,88 @@
         .review-item:hover {
             transform: translateY(-5px);
         }
+
+        .reviews-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .reviews-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            /* Firefox */
+            padding: 20px 0;
+        }
+
+        .reviews-slider::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Edge */
+        }
+
+        .review-item {
+            flex: 0 0 auto;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 20px;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .review-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .review-item h3 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #FF6B35;
+        }
+
+        .review-location {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .review-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .prev-btn,
+        .next-btn {
+            background-color: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .prev-btn:hover,
+        .next-btn:hover {
+            background-color: white;
+            color: #FF6B35;
+        }
     </style>
 </head>
 
@@ -142,13 +224,13 @@
 
                         <div
                             class="menu-item bg-white rounded-xl shadow-lg overflow-hidden w-80     transform transition-all hover:scale-105">
-                            <img src="uploads/potato.jpeg" alt="Potato" class="w-full h-48 object-cover">
+                            <img src="uploads/fries.webp" alt="Fries" class="w-full h-48 object-cover">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-3">
-                                    <h3 class="text-xl font-bold">Potato</h3>
+                                    <h3 class="text-xl font-bold">Fries</h3>
                                     <span class="text-primary font-bold">Rs. 300</span>
                                 </div>
-                                <p class="text-gray-600 mb-4">Crispy potato wedges with special seasoning.</p>
+                                <p class="text-gray-600 mb-4">Crispy Fries wedges with special seasoning.</p>
                                 <button
                                     class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
                                     to Cart</button>
@@ -182,7 +264,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="#"
+                <a href="/digital_bhatti/menu/menu.php"
                     class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-all">View
                     Full Menu</a>
             </div>
@@ -341,34 +423,34 @@
                 <div class="reviews-slider flex gap-4 ">
 
                     <div class="review-item">
-                        <p class="review-text">"The momos here are so juicy that I thought I reached Nirvana with the
-                            first bite. I ordered a plate of chicken momos, and by the time I finished, I was
-                            emotionally attached to them. Staff so friendly, I think they might be my long-lost cousins.
-                            Highly recommended—will sell my friend’s kidney to eat here again."</p>
+                        <p class="review-text">"This app is so efficient that my food arrived before I even got hungry.
+                            Either they have time-traveling delivery guys or my neighbor is secretly a Digital Bhatti
+                            employee. 10/10 will order again—probably before I even finish this review."</p>
                         <h3>- Manish Wagle</h3>
                         <p class="review-location">Syangja,Nepal</p>
                     </div>
                     <div class="review-item">
-                        <p class="review-text">"From the moment I entered, I felt like I had walked into my mama ghar.
-                            The service? Faster than Nepali aunties spreading news. The food? Better than my own mom’s
-                            cooking (but don’t tell her). I ordered one plate of choila, and my soul demanded another.
-                            If Digital Bhatti doesn’t win an award soon, I’m calling the police."</p>
+                        <p class="review-text">"The only thing faster than my online food order is my mom switching TV
+                            channels during ad breaks. The Thakali set arrived so fresh that I almost believed it was
+                            cooked
+                            in my own kitchen. If you haven’t ordered from here yet, are you even living?"</p>
                         <h3>- Anusha Sharma</h3>
                         <p class="review-location">Parbat, Nepal</p>
                     </div>
                     <div class="review-item">
-                        <p class="review-text">"I came here as a simple man, but after tasting the buff sukuti, I feel
-                            like I should be writing poetry about it. Spices hit my soul like an earthquake, and the
-                            chatni? Spicier than my neighbor’s gossip. If I could legally marry food, Digital Bhatti’s
-                            sukuti would be my bride."</p>
+                        <p class="review-text">"Ordered fries, expected good food. Got fries so crispy that even my life
+                            decisions feel soft in comparison. The delivery guy arrived faster than my relatives when
+                            they
+                            hear free food. If this app had a 'marry' button, I’d click it instantly."</p>
                         <h3>- Prazzwol Shrestha</h3>
                         <p class="review-location">Bhaktapur, Nepal</p>
                     </div>
                     <div class="review-item">
-                        <p class="review-text">"Ordered the Thakali set and almost cried. The dal was smoother than my
-                            love life, the gundruk made me emotional, and the masu? Cooked so perfectly, even my grandma
-                            gave a nod of approval. Felt like I was sitting in a village home but with WiFi. If you
-                            haven’t eaten here yet, are you even Nepali?"</p>
+                        <p class="review-text">"I swear, ordering from this app is smoother than my attempts at
+                            flirting.
+                            The UI is cleaner than my room, and the food? Let’s just say I may or may not have proposed
+                            to
+                            the momo delivery guy. If this service doesn’t get a national award, I’m rioting."</p>
                         <h3>- Nineyitika Shrestha</h3>
                         <p class="review-location">Kritipur, Nepal</p>
                     </div>
