@@ -1,9 +1,12 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+session_start();
 
 $showAlert = false;
 $showError = false;
+if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
+    header("Location: ../index.php"); // Redirect to login page
+    exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '../partials/dbconnect.php';

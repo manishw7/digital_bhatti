@@ -1,6 +1,12 @@
 <?php
+session_start();
 $login = false;
 $showError = false;
+if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == true) {
+    header("Location: ../index.php"); // Redirect to login page
+    exit;
+}
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include '../partials/dbconnect.php';
     $username = $_POST["username"];

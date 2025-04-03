@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if (isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] == true) {
+    header("Location: admin_dashboard.php"); // Redirect to login page
+    exit;
+}
 // Admin credentials
 $admin_username = "admin";
 $admin_password = "admin123";
