@@ -1,7 +1,7 @@
 <?php
 $server = '127.0.0.1';
-$username = 'root';
-$password = '';
+$username = 'phpmyadmin';
+$password = 'Prazzwol4!';
 
 // Connect to MySQL
 $conn = mysqli_connect($server, $username, $password);

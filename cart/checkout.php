@@ -6,13 +6,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 }
 
 include '../partials/dbconnect.php'; // Include the database connection
-require '../partials/nav.php';
 
 // Check if cart is not empty and if delivery info is available
-if (empty($_SESSION['cart']) || !isset($_SESSION['phone_number']) || !isset($_SESSION['delivery_address'])) {
-    header("location: cart.php"); // Redirect to cart if no cart or delivery info
-    exit;
-}
+// if (empty($_SESSION['cart']) || !isset($_SESSION['phone_number']) || !isset($_SESSION['delivery_address'])) {
+//     header("location: cart.php"); // Redirect to cart if no cart or delivery info
+//     exit;
+// }
 
 // Prepare the SQL statement to insert the order
 $sql = "INSERT INTO orders (user_id, food_id, quantity, phone_number, delivery_address, status) VALUES (?, ?, ?, ?, ?, ?)";
@@ -32,7 +31,7 @@ $status = "Pending"; // Default status for the order
 foreach ($_SESSION['cart'] as $food_id => $quantity) {
     // Bind the parameters and execute the query
     mysqli_stmt_bind_param($stmt, "iiisss", $user_id, $food_id, $quantity, $phone_number, $delivery_address, $status);
-    
+
     // Execute the prepared statement for each food item in the cart
     if (!mysqli_stmt_execute($stmt)) {
         echo 'Error inserting order: ' . mysqli_stmt_error($stmt);
@@ -48,111 +47,100 @@ $_SESSION['delivery_address'] = '';
 // Close the prepared statement
 mysqli_stmt_close($stmt);
 
-// Success message
-echo "<div class='container mt-5 text-center'>";
-echo "<h2>Order placed successfully!</h2>";
-echo "<p>Your order is now being processed and will be delivered to your address shortly.</p>";
-echo "<a href='../menu/menu.php' class='btn btn-primary btn-lg mt-4'>Order more food</a>";
-echo "</div>";
+// Set order success variables
+$orderSuccess = true;
+$orderReference = time();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Bhatti - Checkout</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJd0QJXhd8LZP3jYtDdaQKzE8lBsHmeTDbsh9H7WhK3Ypg6Zy9aG7M1l3WwN" crossorigin="anonymous">
-    <style>
-
-        .logo {
-            display: flex;
-            align-items: center;
-            flex-grow: 1; /* Ensures logo pushes links to the right */
-        }
-
-        .logo h1 {
-            margin: 0;
-            font-size: 24px;
-            color: white;
-        }
-
-
-        /* Adjust body content for fixed navbar */
-        body {
-            padding-top: 80px; /* Adjust for fixed navbar */
-        }
-
-        /* General Body Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Container for the Success Message */
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 50px auto;
-            text-align: center;
-        }
-
-        /* Heading Styles */
-        h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #28a745; /* Green color for success */
-            margin-bottom: 20px;
-        }
-
-        /* Paragraph Styles */
-        p {
-            font-size: 1.2rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-        }
-
-        /* Button Styles */
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            font-size: 1.2rem;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .btn-primary {
-                font-size: 1rem;
-                padding: 10px 20px;
+    <title>Digital Bhatti - Order Confirmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff6b35',
+                        secondary: '#2b2d42',
+                        success: '#2ecc71',
+                        accent: '#8d99ae',
+                    }
+                }
             }
         }
-    </style>
+    </script>
 </head>
-<body>
 
+<body class="bg-gray-100 font-sans min-h-screen mt-8">
+    <?php include "../partials/nav.php"; ?>
+    <?php if (isset($orderSuccess) && $orderSuccess): ?>
+        <div class="max-w-2xl mx-auto px-4 py-8">
+            <div class="bg-white rounded-2xl shadow-lg p-8 transition-transform duration-300 hover:-translate-y-1">
+                <!-- Success Icon -->
+                <div class="text-center">
+                    <div class="text-success text-5xl mb-6 animate-pulse">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-success mb-4">Order Confirmed!</h2>
+
+                    <p class="text-gray-700 text-base mb-8">
+                        Thank you for your order. We've received your request and are preparing your delicious food right
+                        now.
+                    </p>
+                </div>
+
+                <!-- Order Details -->
+                <div class="bg-gray-50 rounded-xl p-5 mb-8">
+                    <h3 class="text-base font-semibold text-secondary inline-block border-b-2 border-primary pb-1 mb-4">
+                        Order Details
+                    </h3>
+
+                    <div class="space-y-3">
+                        <p class="text-gray-700">
+                            <span class="font-semibold text-secondary">Order Status:</span>
+                            Being prepared
+                        </p>
+
+                        <p class="text-gray-700">
+                            <span class="font-semibold text-secondary">Delivery Address:</span>
+                            Your food will be delivered to the address you provided
+                        </p>
+
+                        <p class="text-gray-700">
+                            <span class="font-semibold text-secondary">Payment Method:</span>
+                            Cash on Delivery
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="space-y-3 sm:space-y-0 sm:flex sm:justify-center sm:space-x-4">
+                    <a href="../menu/menu.php"
+                        class="w-full sm:w-auto bg-primary hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full inline-flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg">
+                        <i class="fas fa-utensils mr-2"></i> Order More Food
+                    </a>
+
+                    <a href="../orders/order_status.php"
+                        class="w-full sm:w-auto bg-secondary hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-full inline-flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg">
+                        <i class="fas fa-clipboard-list mr-2"></i> View My Orders
+                    </a>
+                </div>
+
+                <!-- Footer Info -->
+                <div class="mt-8 pt-4 border-t border-gray-200 text-center text-gray-500 text-sm">
+                    <p>Order reference: #<?php echo $orderReference; ?></p>
+                    <p class="mt-1">A confirmation has been sent to your email address</p>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 </body>
+
 </html>
-<?php require '../partials/footer.php';?>
