@@ -104,10 +104,9 @@
                                     <span class="text-primary font-bold">Rs. 650</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Cheese, tomatoes, and a variety of toppings.</p>
-                                <a href="/digital_bhatti/menu/menu.php"
-                                    class="text-dark hover:text-primary transition-colors"><button
-                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                        to Cart</button></a>
+                                <button
+                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                    to Cart</button>
                             </div>
                         </div>
 
@@ -120,10 +119,9 @@
                                     <span class="text-primary font-bold">Rs. 700</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Juicy patty with fresh vegetables and sauce.</p>
-                                <a href="/digital_bhatti/menu/menu.php"
-                                    class="text-dark hover:text-primary transition-colors"><button
-                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                        to Cart</button></a>
+                                <button
+                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                    to Cart</button>
                             </div>
                         </div>
 
@@ -136,10 +134,9 @@
                                     <span class="text-primary font-bold">Rs. 400</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Cheesy Corndog with wagyu sausage.</p>
-                                <a href="/digital_bhatti/menu/menu.php"
-                                    class="text-dark hover:text-primary transition-colors"><button
-                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                        to Cart</button></a>
+                                <button
+                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                    to Cart</button>
                             </div>
                         </div>
 
@@ -152,10 +149,9 @@
                                     <span class="text-primary font-bold">Rs. 300</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Crispy potato wedges with special seasoning.</p>
-                                <a href="/digital_bhatti/menu/menu.php"
-                                    class="text-dark hover:text-primary transition-colors"><button
-                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                        to Cart</button></a>
+                                <button
+                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                    to Cart</button>
                             </div>
                         </div>
 
@@ -168,10 +164,9 @@
                                     <span class="text-primary font-bold">Rs. 70</span>
                                 </div>
                                 <p class="text-gray-600 mb-4">Premium quality sausage, perfectly grilled.</p>
-                                <a href="/digital_bhatti/menu/menu.php"
-                                    class="text-dark hover:text-primary transition-colors"><button
-                                        class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
-                                        to Cart</button></a>
+                                <button
+                                    class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">Add
+                                    to Cart</button>
                             </div>
                         </div>
                     </div>

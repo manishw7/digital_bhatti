@@ -141,7 +141,7 @@ if ($result_orders && $row_orders = $result_orders->fetch_assoc()) {
         <!-- Admin Header -->
 
         <!-- Main Content -->
-        <div class="container mx-auto px-4 py-8">
+        <div class="container h-screen mx-auto px-4 py-8">
             <!-- Dashboard Stats -->
 
             <!-- Admin Actions -->
@@ -385,3 +385,6 @@ if ($result_orders && $row_orders = $result_orders->fetch_assoc()) {
 </body>
 
 </html>
+
+</html>
+<?php require 'admin_footer.php'; ?>
