@@ -47,96 +47,6 @@
             background-size: cover;
             background-position: center;
         }
-
-        .review-item {
-            transition: all 0.3s ease;
-        }
-
-        .review-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .reviews-container {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .reviews-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            /* Firefox */
-            padding: 20px 0;
-        }
-
-        .reviews-slider::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari, Edge */
-        }
-
-        .review-item {
-            flex: 0 0 auto;
-            width: 300px;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 10px;
-            padding: 20px;
-            margin-right: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .review-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .review-text {
-            font-style: italic;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-
-        .review-item h3 {
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #FF6B35;
-        }
-
-        .review-location {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        .review-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .prev-btn,
-        .next-btn {
-            background-color: #FF6B35;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .prev-btn:hover,
-        .next-btn:hover {
-            background-color: white;
-            color: #FF6B35;
-        }
     </style>
 </head>
 
@@ -166,15 +76,6 @@
             </h2>
 
             <div class="relative">
-                <button id="menu-prev"
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg text-primary hover:text-white hover:bg-primary transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                        </path>
-                    </svg>
-                </button>
-
                 <div class="menu-scroll overflow-x-auto py-4">
                     <div class="menu-items flex space-x-6 min-w-max px-10">
                         <div
@@ -254,13 +155,6 @@
                     </div>
                 </div>
 
-                <button id="menu-next"
-                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg text-primary hover:text-white hover:bg-primary transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
             </div>
 
             <div class="text-center mt-12">
@@ -322,14 +216,6 @@
             </h2>
 
             <div class="relative">
-                <button id="chef-prev"
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg text-primary hover:text-white hover:bg-primary transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                        </path>
-                    </svg>
-                </button>
 
                 <div class="chef-scroll overflow-x-auto py-4">
                     <div class="chef-items flex space-x-6 min-w-max px-10">
@@ -399,14 +285,6 @@
                         </div>
                     </div>
                 </div>
-
-                <button id="chef-next"
-                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg text-primary hover:text-white hover:bg-primary transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
             </div>
         </div>
     </section>
@@ -442,7 +320,7 @@
                             decisions feel soft in comparison. The delivery guy arrived faster than my relatives when
                             they
                             hear free food. If this app had a 'marry' button, I’d click it instantly."</p>
-                        <h3>- Prazzwol Shrestha</h3>
+                        <h3>- Prajjwol Shrestha</h3>
                         <p class="review-location">Bhaktapur, Nepal</p>
                     </div>
                     <div class="review-item">
@@ -472,65 +350,6 @@
     <?php include "partials/footer.php"; ?>
     <script src="js/reviews.js"></script>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Menu Slider
-        const menuPrev = document.getElementById('menu-prev');
-        const menuNext = document.getElementById('menu-next');
-        const menuScroll = document.querySelector('.menu-scroll');
-
-        menuNext.addEventListener('click', () => {
-            menuScroll.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-
-        menuPrev.addEventListener('click', () => {
-            menuScroll.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-
-        // Chef Slider
-        const chefPrev = document.getElementById('chef-prev');
-        const chefNext = document.getElementById('chef-next');
-        const chefScroll = document.querySelector('.chef-scroll');
-
-        chefNext.addEventListener('click', () => {
-            chefScroll.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-
-        chefPrev.addEventListener('click', () => {
-            chefScroll.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-
-        // Review Slider
-        const reviewPrev = document.getElementById('review-prev');
-        const reviewNext = document.getElementById('review-next');
-        const reviewScroll = document.querySelector('.review-scroll');
-
-        reviewNext.addEventListener('click', () => {
-            reviewScroll.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-
-        reviewPrev.addEventListener('click', () => {
-            reviewScroll.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
