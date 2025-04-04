@@ -349,6 +349,10 @@
     <!-- Footer Section -->
     <?php include "partials/footer.php"; ?>
     <script src="js/reviews.js"></script>
+    <!-- <script src="js/chef.js"></script> -->
+    <!-- <script src="js/menu_index.js"></script> -->
+    <!-- Add this line right before the closing </body> tag -->
+    <script src="js/autoScroll.js"></script>
 
 </body>
 

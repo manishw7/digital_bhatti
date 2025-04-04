@@ -165,6 +165,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <?php require '../partials/footer.php'; ?>
 
+
     <script>
         // Quantity buttons functionality
         document.addEventListener('DOMContentLoaded', function () {
