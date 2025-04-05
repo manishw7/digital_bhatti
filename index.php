@@ -30,6 +30,15 @@
         }
     </script>
     <style>
+        .hero-gradient {
+    background: url('uploads/menu.jpeg') no-repeat center center/cover !important;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
         .menu-scroll,
         .chef-scroll,
         .review-scroll {
@@ -349,11 +358,8 @@
     <!-- Footer Section -->
     <?php include "partials/footer.php"; ?>
     <script src="js/reviews.js"></script>
-    <!-- <script src="js/chef.js"></script> -->
-    <!-- <script src="js/menu_index.js"></script> -->
-    <!-- Add this line right before the closing </body> tag -->
+    <!--Add this line right before the closing -->
     <script src="js/autoScroll.js"></script>
 
 </body>
-
 </html>

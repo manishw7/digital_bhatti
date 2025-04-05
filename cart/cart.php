@@ -418,8 +418,6 @@ $total = $subtotal + $delivery_fee;
         <?php } ?>
     </div>
 
-
-
     <script>
         // Quantity Increment/Decrement
         function incrementQuantity(foodId) {

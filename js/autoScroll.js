@@ -1,47 +1,66 @@
-// Create a new JavaScript file called autoScroll.js
-
-// Function to scroll one card at a time
-function setupCardByCardScroll(containerSelector, scrollInterval) {
+function setupCardByCardScroll(containerSelector, scrollDelay) {
     const scrollContainer = document.querySelector(containerSelector);
-    if (!scrollContainer) return; // Exit if element not found
+    if (!scrollContainer) return;
 
-    // Find all card items in the container
-    const cardsContainer = scrollContainer.querySelector('div'); // The inner container with the flex items
+    const cardsContainer = scrollContainer.querySelector('div');
+    if (!cardsContainer || !cardsContainer.children.length) return;
+
     const cards = cardsContainer.children;
-    if (!cards.length) return;
-
-    // Get the width of a single card including margin
     const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
 
-    // Set up interval to scroll one card at a time
     let currentIndex = 0;
+    let intervalId;
+    let isHovering = false;
+    let scrollTimeout;
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % cards.length;
-        scrollContainer.scrollTo({
-            left: cardWidth * currentIndex,
-            behavior: 'smooth'
-        });
-    }, scrollInterval);
+    const startScroll = () => {
+        intervalId = setInterval(() => {
+            if (isHovering) return;
 
-    // Pause scrolling on mouse enter
-    scrollContainer.addEventListener('mouseenter', function () {
-        // Store current position to resume from here
-        currentPosition = scrollContainer.scrollLeft;
-        clearInterval(scrollInterval);
+            currentIndex = (currentIndex + 1) % cards.length;
+            scrollContainer.scrollTo({
+                left: cardWidth * currentIndex,
+                behavior: 'smooth',
+            });
+        }, scrollDelay);
+    };
+
+    const stopScroll = () => clearInterval(intervalId);
+
+    const syncIndexWithScroll = () => {
+        const scrollLeft = scrollContainer.scrollLeft;
+        const newIndex = Math.round(scrollLeft / cardWidth);
+        if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+        }
+    };
+
+    // Start automatic scroll
+    startScroll();
+
+    // Pause/resume on hover
+    scrollContainer.addEventListener('mouseenter', () => {
+        isHovering = true;
+        stopScroll();
     });
 
-    // Resume scrolling on mouse leave
-    scrollContainer.addEventListener('mouseleave', function () {
-        setupCardByCardScroll(containerSelector, scrollInterval);
+    scrollContainer.addEventListener('mouseleave', () => {
+        isHovering = false;
+        syncIndexWithScroll();  // Sync before resuming
+        startScroll();
+    });
+
+    // Detect manual scrolling (mousewheel, touchpad, etc.)
+    scrollContainer.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            syncIndexWithScroll();
+        }, 150); // Reduced debounce time for better responsiveness
     });
 }
 
-// Initialize the card-by-card scrolling
+// Initialize after DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Menu cards scroll every 3 seconds
-    setupCardByCardScroll('.menu-scroll', 3000);
-
-    // Chef cards scroll every 4 seconds
-    setupCardByCardScroll('.chef-scroll', 4000);
+    setupCardByCardScroll('.menu-scroll', 2000);
+    setupCardByCardScroll('.chef-scroll', 2000);
 });
