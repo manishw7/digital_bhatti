@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_cart'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['checkout'])) {
     $_SESSION['phone_number'] = $_POST['phone_number'];
     $_SESSION['delivery_address'] = $_POST['delivery_address'];
-    header("Location: checkout.php"); // Redirect to checkout after storing delivery info
+    header("Location: payment.php"); // Redirect to checkout after storing delivery info
     exit;
 }
 // Fetch food details from the database
@@ -121,7 +121,6 @@ $total = $subtotal + $delivery_fee;
             font-size: 14px;
             font-weight: 500;
             background-color: #f3f4f6;
-            -moz-appearance: textfield;
         }
 
         .quantity-input input::-webkit-outer-spin-button,

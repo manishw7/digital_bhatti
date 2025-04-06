@@ -8,10 +8,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 include '../partials/dbconnect.php'; // Include the database connection
 
 // Check if cart is not empty and if delivery info is available
-// if (empty($_SESSION['cart']) || !isset($_SESSION['phone_number']) || !isset($_SESSION['delivery_address'])) {
-//     header("location: cart.php"); // Redirect to cart if no cart or delivery info
-//     exit;
-// }
+if (empty($_SESSION['cart']) || !isset($_SESSION['phone_number']) || !isset($_SESSION['delivery_address']) || !isset($_SESSION['payment-method'])) {
+    header("location: cart.php"); // Redirect to cart if no cart or delivery info
+    exit;
+}
 
 // Prepare the SQL statement to insert the order
 $sql = "INSERT INTO orders (user_id, food_id, quantity, phone_number, delivery_address, status) VALUES (?, ?, ?, ?, ?, ?)";
@@ -77,7 +77,7 @@ $orderReference = time();
     </script>
 </head>
 
-<body class="bg-gray-100 font-sans min-h-screen mt-8">
+<body class="bg-gray-100 font-sans min-h-screen">
     <?php include "../partials/nav.php"; ?>
     <?php if (isset($orderSuccess) && $orderSuccess): ?>
         <div class="max-w-2xl mx-auto px-4 py-8">
@@ -115,7 +115,7 @@ $orderReference = time();
 
                         <p class="text-gray-700">
                             <span class="font-semibold text-secondary">Payment Method:</span>
-                            Cash on Delivery
+                            <?php echo $_SESSION['payment-method']?>
                         </p>
                     </div>
                 </div>
