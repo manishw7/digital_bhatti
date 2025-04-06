@@ -185,31 +185,31 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div
                     class="fact-item text-center bg-white/10 backdrop-blur-sm rounded-lg p-8 transform transition-all hover:scale-105">
-                    <h3 class="text-4xl font-bold text-primary mb-2">10M+</h3>
+                    <h3 class="text-4xl font-bold text-primary mb-2">100K+</h3>
                     <p class="text-xl">Happy Customers</p>
                 </div>
 
                 <div
                     class="fact-item text-center bg-white/10 backdrop-blur-sm rounded-lg p-8 transform transition-all hover:scale-105">
-                    <h3 class="text-4xl font-bold text-primary mb-2">5M+</h3>
+                    <h3 class="text-4xl font-bold text-primary mb-2">50K+</h3>
                     <p class="text-xl">Dishes Served</p>
                 </div>
 
                 <div
                     class="fact-item text-center bg-white/10 backdrop-blur-sm rounded-lg p-8 transform transition-all hover:scale-105">
-                    <h3 class="text-4xl font-bold text-primary mb-2">1000+</h3>
+                    <h3 class="text-4xl font-bold text-primary mb-2">100+</h3>
                     <p class="text-xl">Chef Specialties</p>
                 </div>
 
                 <div
                     class="fact-item text-center bg-white/10 backdrop-blur-sm rounded-lg p-8 transform transition-all hover:scale-105">
-                    <h3 class="text-4xl font-bold text-primary mb-2">1M+</h3>
+                    <h3 class="text-4xl font-bold text-primary mb-2">10K+</h3>
                     <p class="text-xl">5-Star Reviews</p>
                 </div>
 
                 <div
                     class="fact-item text-center bg-white/10 backdrop-blur-sm rounded-lg p-8 transform transition-all hover:scale-105">
-                    <h3 class="text-4xl font-bold text-primary mb-2">50+</h3>
+                    <h3 class="text-4xl font-bold text-primary mb-2">20+</h3>
                     <p class="text-xl">Years of Expertise</p>
                 </div>
             </div>
