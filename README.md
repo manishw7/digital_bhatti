@@ -45,7 +45,7 @@ You will need a local server environment to run a PHP application. We recommend 
 4.  **Set up the database:**
     - Open your web browser and go to `http://localhost/phpmyadmin/`.
     - Create a new database. Name it `digital_bhatti_db`.
-    - Find the PHP file that handles the database connection (it might be named `config.php` or `dbconnect.php`).
+    - Find the PHP file that handles the database connection (it is named `dbconnect.php`).
     - Update the database name, username, and password to match your local setup.
       (e.g., `db_name = 'digital_bhatti_db'`, `username = 'root'`, `password = ''`).
 
