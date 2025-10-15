@@ -72,4 +72,4 @@ If you have a suggestion that would make this better, please fork the repo and c
 5.  Open a Pull Request
 
 ## 📄 License
-This project is not currently licensed.
+This project is licensed under the **MIT License**
