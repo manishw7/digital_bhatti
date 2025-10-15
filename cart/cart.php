@@ -1,8 +1,5 @@
 <?php
 session_start();
-ini_set('display_errors', 1);  // Display errors
-ini_set('display_startup_errors', 1);  // Display startup errors
-error_reporting(E_ALL);  // Report all types of errors
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     header("location: ../auth/login.php");
     exit;
